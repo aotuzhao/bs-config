@@ -6,6 +6,11 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
   mvc:
     static-path-pattern: /**
+  redis:
+    database: 0
+    host: 192.168.135.128
+    password:
+    port: 6379
   cloud:
     refresh:
       refreshable: none
@@ -14,7 +19,7 @@ eureka:
     registerWithEureka: true
     fetchRegistry: false
     service-url:
-      defaultZone: http://eureka1:7211/eureka/
+      defaultZone: http://eureka1:7211/eureka/,http://eureka2:7212/eureka/
   server:
     enable-self-preservation: false #关闭自我保护机制
     eviction-interval-timer-in-ms: 4000 #清理间隔
@@ -26,3 +31,6 @@ eureka:
     health-check-url: http://localhost:${server.port}/bbs/actuator/health
     status-page-url: http://localhost:${server.port}/bbs/actuator/info
     home-page-url: http://localhost:${server.port}/
+
+env:
+  prod
