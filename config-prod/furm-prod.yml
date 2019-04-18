@@ -14,12 +14,6 @@ spring:
   cloud:
     refresh:
       refreshable: none
-eureka:
-  client:
-    registerWithEureka: true
-    fetchRegistry: false
-    service-url:
-      defaultZone: http://eureka1:7211/eureka/,http://eureka2:7212/eureka/
   server:
     enable-self-preservation: false #关闭自我保护机制
     eviction-interval-timer-in-ms: 4000 #清理间隔
