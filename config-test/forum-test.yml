@@ -14,7 +14,6 @@ spring:
   cloud:
     refresh:
       refreshable: none
-eureka:
   server:
     enable-self-preservation: false #关闭自我保护机制
     eviction-interval-timer-in-ms: 4000 #清理间隔
