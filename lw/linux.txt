@@ -1,0 +1,51 @@
+加入开机启动
+
+systemctl enable mysqld;
+systemctl enable firewalld.service ;
+systemctl enable httpd.service;
+先关闭,停止运行服务
+
+systemctl stop firewalld.service ;
+加入开机禁用
+
+systemctl disable firewalld.service;
+
+
+
+es
+http://ip:9200
+cd /opt/elasticsearch/bin
+./elasticsearch
+# ./elasticsearch -d表示后台运行
+systemctl start elasticsearch
+systemctl status elasticsearch
+
+
+
+1.查找ES进程
+ps -ef | grep elastic
+2.杀掉ES进程
+kill -9 2382（进程号）
+3.重启ES
+cd elasticsearch-1.5.2/bin
+sh elasticsearch -d
+
+
+Redis
+先切换到redis src目录下
+1、直接启动redis
+./redis-server
+
+2、以后台进程方式启动redis
+第一步：修改redis.conf文件
+将
+daemonize no
+ 
+修改为
+daemonize yes
+　
+./redis-server /usr/local/redis-4.0.6/redis.conf
+
+第三步：关闭redis进程
+首先使用ps -aux | grep redis查看redis进程
+使用kill命令杀死进程
